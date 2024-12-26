@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { CloudSun } from 'lucide-react';
+import { IoPartlySunny } from "react-icons/io5";
 
 export interface IWeatherCardProps {
+    location:string;
 }
 
 export default function WeatherCard (props: IWeatherCardProps) {
@@ -9,22 +10,22 @@ export default function WeatherCard (props: IWeatherCardProps) {
     <div className='m-3 p-4
                     border-r-2 border-b-2 
                     rounded
-                    shadow-sm'     >
+                    shadow-sm bg-neutral-200'     >
         <div className='w-100'>
-            Location Name
+            {props.location}
         </div>
-        <div className='columns-2 w-100'>
+        <div className='grid grid-cols-3 w-100 overflow-hidden'>
                 <div>
-                    
-                    <CloudSun color="#e2d11d" size={64}/>
+                    <IoPartlySunny size={32} className='ml-2'/>
+
                     
                     Current Temperature
                  </div>
-                <div>
+                <div className='grid grid-cols-subgrid col-span-2'>
                     Weather Details
                 </div>
         </div>
-        <hr />
+        <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'/>
         <div className='w-100'>
             Hourly Weather Cast
         </div>
