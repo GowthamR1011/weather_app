@@ -5,7 +5,7 @@ export interface IFooterProps {
 
 export default function  Footer (props: IFooterProps) {
   return (
-    <footer className='bg-indigo-500
+    <footer className='bg-slate-800
              text-xl text-white text-center 
              fixed 
              inset-x-0 
