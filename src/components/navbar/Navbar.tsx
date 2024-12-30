@@ -1,5 +1,7 @@
-import * as React from 'react';
 
+import * as React from 'react';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import { MdDarkMode,MdOutlineWbSunny } from "react-icons/md";
 export interface INavbarProps {
 }
 
@@ -21,10 +23,10 @@ export default function Navbar (props: INavbarProps) {
                     Location
                 </div>
                 <div>
-                    Theme
+                    <ToggleSwitch id = "ThemeToggleSwitch" IconOn={MdDarkMode} IconOff={MdOutlineWbSunny}/>
                 </div>
                 <div>
-                    Degree Settings
+                    <ToggleSwitch id="DegreeToggleSwitch" labelOff='°C' labelOn='°F' />
                 </div>
             </div>
         </div>     
