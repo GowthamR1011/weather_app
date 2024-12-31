@@ -1,4 +1,4 @@
-import WeatherCard from "@/components/weather_card/weather_card";
+import WeatherCard from "@/components/WeatherCard/WeatherCard";
 
 export default function Home() {
   const LocationList:string[] =[];
