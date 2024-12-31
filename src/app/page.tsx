@@ -8,10 +8,8 @@ export default function Home() {
   return (
    <div>
       <div className="Current Location Content">
-        <div>
-          <h5>Current Location</h5>
-        </div>
-        <WeatherCard location="None"/>
+        
+        <WeatherCard location="Current Location"/>
       </div>
       <div className="Saved Location List">
         {
