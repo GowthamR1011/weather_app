@@ -1,6 +1,7 @@
 import * as React from 'react';
 import WeatherDetails,{ IWeatherDetailsProps } from './WeatherDetails/WeatherDetails';
 import { IoPartlySunny } from "react-icons/io5";
+import { HourlyCast, IHourlyCastListProps, IHourlyCastProps } from './HourlyCast/HourlyCast';
 
 export interface IWeatherCardProps {
     location:string;
@@ -16,6 +17,8 @@ weatherDetailsProps.Pressure="21 inHg";
 weatherDetailsProps.UVIndex="1";
 weatherDetailsProps.WindSpeed="22 mph";
 
+
+const hourlyCast : IHourlyCastListProps = { hourlyCastList: [{time:"1pm",temperature:"23 °C",condition:"sunny"}]};
 
 export default function WeatherCard (props: IWeatherCardProps) {
   return (
@@ -41,8 +44,8 @@ export default function WeatherCard (props: IWeatherCardProps) {
                 </div>
         </div>
         <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'/>
-        <div className='w-100'>
-            Hourly Weather Cast
+        <div className='w-100 overflow-scrollable'>
+            <HourlyCast hourlyCastList={hourlyCast.hourlyCastList}/>
         </div>
         
       
