@@ -45,7 +45,7 @@ export default function WeatherCard (props: IWeatherCardProps) {
         </div>
         <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'/>
         <div className='w-100 overflow-scrollable'>
-            <HourlyCast hourlyCastList={hourlyCast.hourlyCastList}/>
+            <HourlyCast hourlyCastList={[]}/>
         </div>
         
       

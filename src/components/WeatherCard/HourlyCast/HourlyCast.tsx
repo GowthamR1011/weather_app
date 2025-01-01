@@ -9,7 +9,7 @@ export interface IHourlyCastProps {
 }
 
 export interface IHourlyCastListProps{
-    hourlyCastList?:IHourlyCastProps[];
+    hourlyCastList:IHourlyCastProps[];
 }
 
 export function HourlyCast (props:IHourlyCastListProps) {
@@ -19,7 +19,7 @@ export function HourlyCast (props:IHourlyCastListProps) {
     <div className='flex overflow-x-auto'>
     
         { hourlyCastList.length == 0?
-        <p>Unable to Load data</p>:
+        <p>Unable to Load Data</p>:
         hourlyCastList.map(({time,temperature,condition}) => {
             return(
                 <div className='mx-3'>
