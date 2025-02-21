@@ -22,14 +22,15 @@ export default function RootLayout({
       
 
       <script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script> */}
-
-      <body>
+     
+      <body>     
         <AppWrapper>
-          <Header />
-          {children}
-          <Footer />
-        </AppWrapper>
+            <Header />
+            {children}
+            <Footer />
+          </AppWrapper>
       </body>
+      
     </html>
   );
 }

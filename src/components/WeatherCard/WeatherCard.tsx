@@ -1,7 +1,10 @@
+"use client";
 import * as React from 'react';
 import WeatherDetails,{ IWeatherDetailsProps } from './WeatherDetails/WeatherDetails';
 import { IoPartlySunny } from "react-icons/io5";
 import { HourlyCast, IHourlyCastListProps } from './HourlyCast/HourlyCast';
+import { useAppContext } from '@/contexts';
+import { ThemeClasses } from '@/app/styles';
 
 export interface IWeatherCardProps {
     location:string;
@@ -21,11 +24,15 @@ weatherDetailsProps.WindSpeed="22 mph";
 const hourlyCast : IHourlyCastListProps = { hourlyCastList: [{time:"1pm",temperature:"23 °C",condition:"sunny"}]}; // Fetch from OpenWeather API
 
 export default function WeatherCard (props: IWeatherCardProps) {
+  const {darkTheme} = useAppContext();
+  const currentTheme:string = darkTheme? ThemeClasses['dark'].weathercard: ThemeClasses['light'].weathercard;
+
   return (
-    <div className='m-3 p-4
+    <div className={`m-3 p-4
                     border-r-2 border-b-2 
                     rounded
-                    shadow-sm bg-neutral-200'     >
+                    shadow-sm 
+                    ${currentTheme}`}>
         <div className='w-100 my-2'>
             {props.location}
         </div>

@@ -1,7 +1,7 @@
 import WeatherCard from "@/components/WeatherCard/WeatherCard";
 
 export default function Home() {
-  const LocationList:string[] =[];
+  const LocationList:string[] =["Manchester","Chennai","Los Angeles","Austin"];
   
   
 
@@ -23,8 +23,9 @@ export default function Home() {
 
         <div>
           {LocationList.map((locationValue:string) => {
-            return(
+            return(<div key={locationValue}>
               <WeatherCard location={locationValue} />
+              </div>
             )
             })
           }

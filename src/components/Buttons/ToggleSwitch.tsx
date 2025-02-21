@@ -24,7 +24,7 @@ const ToggleSwitch: React.FunctionComponent<IToggleSwitchProps> = (props) => {
     }
     
     { props.labelOff && 
-        <label htmlFor={props.id} className="text-white text-sm cursor-pointer">
+        <label htmlFor={props.id} className="text-sm cursor-pointer">
             {props.labelOff}
         </label> 
     }
@@ -47,7 +47,7 @@ const ToggleSwitch: React.FunctionComponent<IToggleSwitchProps> = (props) => {
     }
 
     { props.labelOn && 
-        <label htmlFor={props.id} className="text-white text-sm cursor-pointer">
+        <label htmlFor={props.id} className="text-sm cursor-pointer">
             {props.labelOn}
         </label>
     }

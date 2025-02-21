@@ -2,19 +2,19 @@
 import { createContext,useState,useContext } from "react";
 
 type IAppContext={
-    theme:boolean,
+    darkTheme:boolean,
     metric:boolean,
 
     changeMetric:Function,
     changeTheme:Function
 }
-const themes = {"light":true,"dark":false};
-const metrics = {"international":true,"imperial":false};
+// const themes = {"light":false,"dark":true};
+// const metrics = {"international":false,"imperial":true};
 
 
 const AppContext = createContext<IAppContext>({
-                                                theme:themes['light'], 
-                                                metric:metrics['international'],
+                                                darkTheme:false,
+                                                metric:true,
                                                 changeTheme:()=>{},
                                                 changeMetric:()=>{}});
 
@@ -23,12 +23,12 @@ const AppContext = createContext<IAppContext>({
 export function AppWrapper({children}:{
     children:React.ReactNode;
 }){
-    const [theme,setTheme] = useState<boolean>(themes['light']);
-    const [metric,setMetric] = useState<boolean>(metrics['international'])
+    const [darkTheme,setDarkTheme] = useState<boolean>(false);
+    const [metric,setMetric] = useState<boolean>(true);
     
     function changeTheme(){
-        setTheme(!theme);
-        console.log(theme);
+        setDarkTheme(!darkTheme);
+        // console.log(theme);
 
     }
 
@@ -38,7 +38,7 @@ export function AppWrapper({children}:{
     }
 
     return(
-        <AppContext.Provider value={{theme,metric,changeMetric,changeTheme}}>
+        <AppContext.Provider value={{darkTheme,metric,changeMetric,changeTheme}}>
             {children}
         </AppContext.Provider>
     )
