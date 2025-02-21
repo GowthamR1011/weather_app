@@ -22,7 +22,7 @@ export function HourlyCast (props:IHourlyCastListProps) {
         <p>Unable to Load Data</p>:
         hourlyCastList.map(({time,temperature,condition}) => {
             return(
-                <div className='mx-3'>
+                <div key={time} className='mx-3'>
                     <p className='text-sm'>{time}</p>
                     <IoPartlySunny size={22} className=''/>
                     <p className='text-sm'>{temperature}</p>
