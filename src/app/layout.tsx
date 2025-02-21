@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { AppWrapper } from "@/contexts";
+
 
 export const metadata: Metadata = {
   title: "Weather APP with NextJS",
@@ -22,9 +24,11 @@ export default function RootLayout({
       <script async src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script> */}
 
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <AppWrapper>
+          <Header />
+          {children}
+          <Footer />
+        </AppWrapper>
       </body>
     </html>
   );

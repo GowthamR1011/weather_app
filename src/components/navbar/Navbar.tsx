@@ -1,15 +1,17 @@
 
 import * as React from 'react';
 import ToggleSwitch from '../Buttons/ToggleSwitch';
-import { MdDarkMode,MdOutlineWbSunny } from "react-icons/md";
+import ThemeButton from '../Buttons/ThemeButton/ThemeButton';
 import LocationButton from '../Buttons/LocationButton';
 import SearchButton from '../Buttons/SearchButton';
+import MetricButton from '../Buttons/MetricButton/MetricButton';
 
 
 export interface INavbarProps {
 }
 
 export default function Navbar (props: INavbarProps) {
+
   return (
    <nav className='shadow-sm bg-slate-800
                     text-xl text-white
@@ -31,10 +33,10 @@ export default function Navbar (props: INavbarProps) {
                     <SearchButton />
                 </div>
                 <div>
-                    <ToggleSwitch id = "ThemeToggleSwitch" IconOn={MdDarkMode} IconOff={MdOutlineWbSunny}/>
+                    <ThemeButton />
                 </div>
                 <div>
-                    <ToggleSwitch id="DegreeToggleSwitch" labelOff='°C' labelOn='°F' />
+                    <MetricButton />
                 </div>
             </div>
         </div>     
